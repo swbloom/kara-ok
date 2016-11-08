@@ -4,7 +4,7 @@ const ReactDOM =  require('react-dom');
 const config = {
   // Initialize Firebase
   apiKey: "AIzaSyAsVat3Vg3ovNdcY73fm5i8qf6T9jgIsbg",
-  authDomain: "kare-ok.firebaseapp.com",
+  authDomain: "kara-ok.firebaseapp.com",
   databaseURL: "https://kare-ok.firebaseio.com",
   storageBucket: "",
   messagingSenderId: "76640844510"
@@ -58,7 +58,6 @@ class App extends React.Component {
 
     const dbRefTwo = firebase.database().ref('currentTrack').on('value', (res) => {
         const dbTrack = res.val();
-        console.log(dbTrack);
         const currentTrack = {};
 
         currentTrack.id = dbTrack.id
@@ -130,7 +129,7 @@ class App extends React.Component {
                 {this.state.songs.map((song, i) =>
                   <div className="row" key={i}>
                     <div className="col-md-6">
-                      <div><h5>{song.title}></h5></div>
+                      <div><h5>{song.title}</h5></div>
                     </div>
                     <div className="col-md-6 btn-group">
                       <a href="#" className="btn btn-success" onClick={(e) => this.playSong.call(this, song)}>Play</a>
