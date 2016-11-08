@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Kare-ok</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="public/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+
+			<h1>kara👌</h1>
+			<small>because it's only just kind of okay...</small>
+		</div>
+		<main id="app"></main>
+	</div>
+	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+	<script src="public/app.js"></script>
+	<script>
+		onClientLoad = function() {
+			gapi.client.load('youtube', 'v3', onYouTubeApiLoad);
+		}
+		onYouTubeApiLoad = function() {
+			gapi.client.setApiKey('AIzaSyBKLvs29Vw-3DlGe3d__RX0Dzy0K9YAAv8');
+		};
+		showResponse = function(response) {
+			var responseString = JSON.stringify(response, '', 2);
+			document.getElementById('response'). innerHTML += responseString;
+		};
+	</script>
+	<script src="https://apis.google.com/js/client.js?onload=onClientLoad" type="text/javascript"></script>
+</body>
+</html>
